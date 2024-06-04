@@ -53,6 +53,21 @@ struct ContentView: View {
             .frame(width: buttonWidth) // Width is set to match width of first button
             
             
+            Button(action: {
+                counter = 0
+            }) {
+                Text("Reset")
+                    .font(.body)
+                    .fontWeight(.bold)
+                    .padding()
+                    .buttonStyle(BorderedButtonStyle())
+                    .foregroundColor(.blue)
+                    .cornerRadius(10)
+                    .fixedSize(horizontal: true, vertical: false)
+            }
+            .frame(width: buttonWidth)
+            
+            
         }
     }
 }
