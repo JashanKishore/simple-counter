@@ -45,7 +45,20 @@ class CounterManager: ObservableObject {
     
     // Function to add a new entry to the history log
         private func addHistoryEntry(change: Int) {
-            let entry = "Counter changed by \(change) to \(counter) at \(Date())"
+            let formatter = DateFormatter()
+            formatter.dateStyle = .short
+            formatter.timeStyle = .medium
+            let date = formatter.string(from: Date())
+            
+            let entry: String
+            if change > 0 {
+                entry = "Incremented by \(change) to \(counter) on \(date)"
+            } else if change < 0 {
+                entry = "Decremented by \(-change) to \(counter) on \(date)"
+            } else {
+                entry = "Reset to \(counter) on \(date)"
+            }
+            
             history.append(entry)
         }
         
