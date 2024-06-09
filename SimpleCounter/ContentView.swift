@@ -25,7 +25,7 @@ struct ContentView: View {
                 counter -= 1
             }
             
-            counterButton(label: "Reset", color: .blue, isBold: true) {
+            counterButton(label: "Reset", color: .black) {
                 counter = 0
             }
         }
