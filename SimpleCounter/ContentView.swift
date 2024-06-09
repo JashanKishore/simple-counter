@@ -14,49 +14,61 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                // Display the current counter value
+            
+                Spacer()
+                
+                // Display the current counter value with some padding and background styling
                 Text("Counter: \(counterManager.counter)")
                     .font(.largeTitle)
                     .padding()
+                    .background(Color(.systemGray6))
+                    .cornerRadius(10)
                 
-                // Button to increment the counter
-                counterButton(label: "Increment", color: .blue) {
-                    counterManager.counter += counterManager.incrementValue
-                }
+                Spacer()
                 
-                // Button to decrement the counter
-                counterButton(label: "Decrement", color: .red) {
-                    counterManager.counter -= counterManager.incrementValue
+                //Vstack for buttons
+                VStack(spacing: 20) {
+                    // Button to increment the counter
+                    HStack (spacing: 20){
+                        counterButton(label: "Increment", color: .blue) {
+                            counterManager.counter += counterManager.incrementValue
+                        }
+                        
+                        // Button to decrement the counter
+                        counterButton(label: "Decrement", color: .red) {
+                            counterManager.counter -= counterManager.incrementValue
+                        }
+                    }
+                    
+                    // Button to reset the counter to zero with padding and background styling
+                    counterButton(label: "Reset", color: .black) {
+                        counterManager.counter = 0
+                    }
+                    
+                    // Navigation link to the settings view
+                    NavigationLink(destination: SettingsView().environmentObject(counterManager)) {
+                        Text("Settings")
+                            .font(.title2)
+                            .padding()
+                            .background(Color.gray)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                    
+                    // Navigation link to the history view
+                    NavigationLink(destination: HistoryView().environmentObject(counterManager)) {
+                        Text("History Log")
+                            .font(.title2)
+                            .padding()
+                            .background(Color.gray)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
                 }
-                
-                // Button to reset the counter to zero
-                counterButton(label: "Reset", color: .black) {
-                    counterManager.counter = 0
-                }
-                
-                // Navigation link to the settings view
-                NavigationLink(destination: SettingsView().environmentObject(counterManager)) {
-                                    Text("Settings")
-                                        .font(.title2)
-                                        .padding()
-                                        .background(Color.gray)
-                                        .foregroundColor(.white)
-                                        .cornerRadius(10)
-                }
-                .padding(.top)
-                
-                // Navigation link to the history view
-                NavigationLink(destination: HistoryView().environmentObject(counterManager)) {
-                    Text("History Log")
-                        .font(.title2)
-                        .padding()
-                        .background(Color.gray)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                .padding(.top)
+                .padding(.bottom, 40)
             }
-            .navigationBarTitle("Counter App", displayMode: .inline)
+            .padding()
+            .navigationBarTitle("Simple Counter", displayMode: .inline)
         }
     }
     
