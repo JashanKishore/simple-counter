@@ -12,6 +12,7 @@
 		181BF8942C0F335E00450DA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181BF8932C0F335E00450DA9 /* Assets.xcassets */; };
 		181BF8972C0F335E00450DA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181BF8962C0F335E00450DA9 /* Preview Assets.xcassets */; };
 		181BF89E2C15921700450DA9 /* CounterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BF89D2C15921700450DA9 /* CounterManager.swift */; };
+		181BF8A02C15971300450DA9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BF89F2C15971300450DA9 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		181BF8932C0F335E00450DA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		181BF8962C0F335E00450DA9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		181BF89D2C15921700450DA9 /* CounterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterManager.swift; sourceTree = "<group>"; };
+		181BF89F2C15971300450DA9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				181BF89D2C15921700450DA9 /* CounterManager.swift */,
 				181BF8932C0F335E00450DA9 /* Assets.xcassets */,
 				181BF8952C0F335E00450DA9 /* Preview Content */,
+				181BF89F2C15971300450DA9 /* SettingsView.swift */,
 			);
 			path = SimpleCounter;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				181BF8922C0F335D00450DA9 /* ContentView.swift in Sources */,
+				181BF8A02C15971300450DA9 /* SettingsView.swift in Sources */,
 				181BF89E2C15921700450DA9 /* CounterManager.swift in Sources */,
 				181BF8902C0F335D00450DA9 /* SimpleCounterApp.swift in Sources */,
 			);

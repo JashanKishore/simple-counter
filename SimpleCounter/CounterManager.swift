@@ -22,9 +22,17 @@ class CounterManager: ObservableObject {
         }
     }
     
-    // Initialize the counter value from UserDefaults
-    init() {
-        self.counter = UserDefaults.standard.integer(forKey: "counter")
-    }
-}
-
+    @Published var incrementValue: Int {
+           didSet {
+               UserDefaults.standard.set(incrementValue, forKey: "incrementValue")
+           }
+       }
+       
+       init() {
+           self.counter = UserDefaults.standard.integer(forKey: "counter")
+           self.incrementValue = UserDefaults.standard.integer(forKey: "incrementValue")
+           if incrementValue == 0 {
+               incrementValue = 1 // Default value
+           }
+       }
+   }
