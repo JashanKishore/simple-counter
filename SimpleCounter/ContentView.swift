@@ -17,61 +17,47 @@ struct ContentView: View {
                 .font(.largeTitle)
                 .padding()
             
-            
-            Button(action: {
+            counterButton(label: "Increment", color: .blue) {
                 counter += 1
-            }) {
-                Text("Increment")
-                    .font(.title)
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .fixedSize(horizontal: true, vertical: false) // Used on text fields to prevent wrapping.
             }
-            .background(
-                GeometryReader { geometry in  // Measures the size of button and updates buttonWidth variable
-                    Color.clear
-                        .onAppear {
-                            self.buttonWidth = geometry.size.width
-                        }
-                }
-            )
             
-            
-            Button(action: {
+            counterButton(label: "Decrement", color: .red) {
                 counter -= 1
-            }) {
-                Text("Decrement")
-                    .font(.title)
-                    .padding()
-                    .background(Color.red)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .fixedSize(horizontal: true, vertical: false)
             }
-            .frame(width: buttonWidth) // Width is set to match width of first button
             
-            
-            Button(action: {
+            counterButton(label: "Reset", color: .blue, isBold: true) {
                 counter = 0
-            }) {
-                Text("Reset")
-                    .font(.body)
-                    .fontWeight(.bold)
-                    .padding()
-                    .buttonStyle(BorderedButtonStyle())
-                    .foregroundColor(.blue)
-                    .cornerRadius(10)
-                    .fixedSize(horizontal: true, vertical: false)
             }
-            .frame(width: buttonWidth)
-            
-            
         }
+    }
+    
+    @ViewBuilder
+    private func counterButton(label: String, color: Color, isBold: Bool = false, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Text(label)
+                .font(.title)
+                .fontWeight(isBold ? .bold : .regular)
+                .padding()
+                .background(color)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                .fixedSize(horizontal: true, vertical: false)
+        }
+        .background(
+            GeometryReader { geometry in
+                Color.clear
+                    .onAppear {
+                        if buttonWidth == nil {
+                            buttonWidth = geometry.size.width
+                        }
+                    }
+            }
+        )
+        .frame(width: buttonWidth)
     }
 }
 
 #Preview {
     ContentView()
 }
+
