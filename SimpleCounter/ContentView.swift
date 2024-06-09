@@ -44,6 +44,17 @@ struct ContentView: View {
                                         .cornerRadius(10)
                 }
                 .padding(.top)
+                
+                // Navigation link to the history view
+                NavigationLink(destination: HistoryView().environmentObject(counterManager)) {
+                    Text("History Log")
+                        .font(.title2)
+                        .padding()
+                        .background(Color.gray)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
+                .padding(.top)
             }
             .navigationBarTitle("Counter App", displayMode: .inline)
         }

@@ -13,6 +13,8 @@ class CounterManager: ObservableObject {
         didSet {
             // Save the updated counter value to UserDefaults whenever it changes
             UserDefaults.standard.set(counter, forKey: "counter")
+            // Add a new entry to the history log whenever the counter changes
+            addHistoryEntry(change: counter - oldValue)
         }
     }
     
@@ -23,14 +25,33 @@ class CounterManager: ObservableObject {
         }
     }
     
+    @Published var history: [String] {
+           didSet {
+               // Save the updated history log to UserDefaults
+               UserDefaults.standard.set(history, forKey: "history")
+           }
+       }
+    
     // Initialize the counter and increment values from UserDefaults
     init() {
         self.counter = UserDefaults.standard.integer(forKey: "counter")
         self.incrementValue = UserDefaults.standard.integer(forKey: "incrementValue")
+        self.history = UserDefaults.standard.stringArray(forKey: "history") ?? []
         // Set a default increment value if none is found in UserDefaults
         if incrementValue == 0 {
             incrementValue = 1
         }
     }
+    
+    // Function to add a new entry to the history log
+        private func addHistoryEntry(change: Int) {
+            let entry = "Counter changed by \(change) to \(counter) at \(Date())"
+            history.append(entry)
+        }
+        
+        // Function to clear the history log
+        func clearHistory() {
+            history.removeAll()
+        }
 }
 
