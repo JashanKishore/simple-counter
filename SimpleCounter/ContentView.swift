@@ -34,6 +34,7 @@ struct ContentView: View {
                     counterManager.counter = 0
                 }
                 
+                // Navigation link to the settings view
                 NavigationLink(destination: SettingsView().environmentObject(counterManager)) {
                                     Text("Settings")
                                         .font(.title2)

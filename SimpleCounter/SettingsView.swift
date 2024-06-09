@@ -18,11 +18,13 @@ struct SettingsView: View {
                 .font(.largeTitle)
                 .padding()
             
+            // TextField to input the increment value
             TextField("Increment Value", text: $tempIncrementValue)
                 .keyboardType(.numberPad)
                 .padding()
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             
+            // Button to save the increment value
             Button(action: {
                 if let newValue = Int(tempIncrementValue), newValue > 0 {
                     counterManager.incrementValue = newValue
@@ -39,6 +41,7 @@ struct SettingsView: View {
             .padding()
         }
         .onAppear {
+            // Initialize the text field with the current increment value
             tempIncrementValue = "\(counterManager.incrementValue)"
         }
         .padding()
