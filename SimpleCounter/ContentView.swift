@@ -10,8 +10,6 @@ import SwiftUI
 struct ContentView: View {
     // @StateObject creates an observable instance of CounterManager that will be retained by this view
     @StateObject private var counterManager = CounterManager()
-    @State private var counter = 0
-    @State private var buttonWidth: CGFloat?  // Stores the width of the first button to set consistent widths for all buttons
     
     var body: some View {
             VStack {
@@ -37,34 +35,21 @@ struct ContentView: View {
             }
         }
     
-    // A helper function to create buttons with consistent styling and dynamic width
-    @ViewBuilder
-    private func counterButton(label: String, color: Color, isBold: Bool = false, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            Text(label)
-                .font(.title)
-                .fontWeight(isBold ? .bold : .regular)
-                .padding()
-                .background(color)
-                .foregroundColor(.white)
-                .cornerRadius(10)
-                .fixedSize(horizontal: true, vertical: false)
-        }
-        .background(
-            GeometryReader { geometry in
-                Color.clear
-                    .onAppear {
-                        // Set the buttonWidth to the width of the first button
-                        if buttonWidth == nil {
-                            buttonWidth = geometry.size.width
-                        }
-                    }
+    // A helper function to create buttons with consistent styling
+        @ViewBuilder
+        private func counterButton(label: String, color: Color, isBold: Bool = false, action: @escaping () -> Void) -> some View {
+            Button(action: action) {
+                Text(label)
+                    .font(.title)
+                    .fontWeight(isBold ? .bold : .regular)
+                    .padding()
+                    .background(color)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .fixedSize(horizontal: true, vertical: false)
             }
-        )
-        // Use the buttonWidth for all buttons to ensure they have the same width
-        .frame(width: buttonWidth)
+        }
     }
-}
 
 #Preview {
     ContentView()
