@@ -45,15 +45,6 @@ struct ContentView: View {
                         counterManager.counter = 0
                     }
                     
-                    // Navigation link to the settings view
-                    NavigationLink(destination: SettingsView().environmentObject(counterManager)) {
-                        Text("Settings")
-                            .font(.title2)
-                            .padding()
-                            .background(Color.gray)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                    }
                     
                     // Navigation link to the history view
                     NavigationLink(destination: HistoryView().environmentObject(counterManager)) {
@@ -65,10 +56,18 @@ struct ContentView: View {
                             .cornerRadius(10)
                     }
                 }
-                .padding(.bottom, 40)
+                .padding(.bottom, 10)
             }
             .padding()
             .navigationBarTitle("Simple Counter", displayMode: .inline)
+            .navigationBarItems(
+                trailing: NavigationLink(destination: SettingsMenuView().environmentObject(counterManager)) {
+                    // Use an SF Symbol for the settings icon
+                    Image(systemName: "gearshape")
+                        .imageScale(.large)
+                        .foregroundColor(.blue)
+                }
+            )
         }
     }
     

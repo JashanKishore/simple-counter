@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SettingsView: View {
+struct CustomiseIncrementView: View {
     @EnvironmentObject var counterManager: CounterManager
     @Environment(\.presentationMode) var presentationMode
     @State private var tempIncrementValue: String = ""
@@ -41,7 +41,7 @@ struct SettingsView: View {
             .padding()
         }
         .onAppear {
-            // Initialize the text field with the current increment value
+            // Initialise the text field with the current increment value
             tempIncrementValue = "\(counterManager.incrementValue)"
         }
         .padding()
@@ -49,5 +49,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView().environmentObject(CounterManager())
+    CustomiseIncrementView().environmentObject(CounterManager())
 }
