@@ -8,29 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
+    // @StateObject creates an observable instance of CounterManager that will be retained by this view
+    @StateObject private var counterManager = CounterManager()
     @State private var counter = 0
-    @State private var buttonWidth: CGFloat?  // stores width of original button for dynamic sizing of other buttons
+    @State private var buttonWidth: CGFloat?  // Stores the width of the first button to set consistent widths for all buttons
     
     var body: some View {
-        VStack {
-            Text("Counter: \(counter)")
-                .font(.largeTitle)
-                .padding()
-            
-            counterButton(label: "Increment", color: .blue) {
-                counter += 1
-            }
-            
-            counterButton(label: "Decrement", color: .red) {
-                counter -= 1
-            }
-            
-            counterButton(label: "Reset", color: .black) {
-                counter = 0
+            VStack {
+                // Display the current counter value
+                Text("Counter: \(counterManager.counter)")
+                    .font(.largeTitle)
+                    .padding()
+                
+                // Button to increment the counter
+                counterButton(label: "Increment", color: .blue) {
+                    counterManager.counter += 1
+                }
+                
+                // Button to decrement the counter
+                counterButton(label: "Decrement", color: .red) {
+                    counterManager.counter -= 1
+                }
+                
+                // Button to reset the counter to zero
+                counterButton(label: "Reset", color: .black) {
+                    counterManager.counter = 0
+                }
             }
         }
-    }
     
+    // A helper function to create buttons with consistent styling and dynamic width
     @ViewBuilder
     private func counterButton(label: String, color: Color, isBold: Bool = false, action: @escaping () -> Void) -> some View {
         Button(action: action) {
@@ -47,12 +54,14 @@ struct ContentView: View {
             GeometryReader { geometry in
                 Color.clear
                     .onAppear {
+                        // Set the buttonWidth to the width of the first button
                         if buttonWidth == nil {
                             buttonWidth = geometry.size.width
                         }
                     }
             }
         )
+        // Use the buttonWidth for all buttons to ensure they have the same width
         .frame(width: buttonWidth)
     }
 }
