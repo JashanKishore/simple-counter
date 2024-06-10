@@ -15,7 +15,7 @@ struct CustomiseIncrementView: View {
     var body: some View {
             VStack {
                 // Title
-                Text("Change increment value")
+                Text("Change Increment Value")
                     .font(.title)
                     .fontWeight(.bold)
                     .padding(.top, 40)

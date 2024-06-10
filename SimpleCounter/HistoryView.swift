@@ -14,6 +14,7 @@ struct HistoryView: View {
         VStack {
             Text("History Log")
                 .font(.largeTitle)
+                .fontWeight(.bold)
                 .padding()
             
             // List to display the history log with the most recent entries at the top
