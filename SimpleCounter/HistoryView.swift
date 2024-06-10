@@ -34,6 +34,8 @@ struct HistoryView: View {
             }
             .padding()
         }
+        .navigationBarTitle("", displayMode: .inline) // Set title display mode to inline
+        .customBackButton()
     }
 }
 

@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct SettingsMenuView: View {
+    @EnvironmentObject var counterManager: CounterManager
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         List {
             Section(header: Text("Counter Settings")) {
-                NavigationLink(destination: CustomiseIncrementView().environmentObject(CounterManager())) {
+                NavigationLink(destination: CustomiseIncrementView().environmentObject(counterManager)) { // Use the environment object
                     Text("Change increment value")
                 }
             }
@@ -28,5 +29,5 @@ struct SettingsMenuView: View {
 }
 
 #Preview {
-    SettingsMenuView()
+    SettingsMenuView().environmentObject(CounterManager())
 }

@@ -13,6 +13,7 @@ class CounterManager: ObservableObject {
         didSet {
             // Save the updated counter value to UserDefaults whenever it changes
             UserDefaults.standard.set(counter, forKey: "counter")
+            UserDefaults.standard.synchronize() // Force synchronization
             // Add a new entry to the history log whenever the counter changes
             addHistoryEntry(change: counter - oldValue)
         }
@@ -22,6 +23,7 @@ class CounterManager: ObservableObject {
         didSet {
             // Save the updated increment value to UserDefaults whenever it changes
             UserDefaults.standard.set(incrementValue, forKey: "incrementValue")
+            UserDefaults.standard.synchronize() // Force synchronization
         }
     }
     
@@ -29,6 +31,7 @@ class CounterManager: ObservableObject {
            didSet {
                // Save the updated history log to UserDefaults
                UserDefaults.standard.set(history, forKey: "history")
+               UserDefaults.standard.synchronize() // Force synchronization
            }
        }
     
@@ -41,6 +44,7 @@ class CounterManager: ObservableObject {
         if incrementValue == 0 {
             incrementValue = 1
         }
+        print("Initialized with incrementValue: \(incrementValue)")
     }
     
     // Function to add a new entry to the history log

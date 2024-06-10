@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    // @StateObject creates an observable instance of CounterManager that will be retained by this view
-    @StateObject private var counterManager = CounterManager()
+    @EnvironmentObject var counterManager: CounterManager
     
     var body: some View {
             NavigationView {
@@ -47,16 +46,19 @@ struct ContentView: View {
                         // HStack for Increment and Decrement buttons
                         HStack(spacing: 20) {
                             counterButton(label: "Increment", color: .blue) {
+                                print("Increment button pressed. Current incrementValue: \(counterManager.incrementValue)")
                                 counterManager.counter += counterManager.incrementValue
                             }
                             
                             counterButton(label: "Decrement", color: .red) {
+                                print("Decrement button pressed. Current incrementValue: \(counterManager.incrementValue)")
                                 counterManager.counter -= counterManager.incrementValue
                             }
                         }
                         
                         // Reset button with some padding and background styling
                         counterButton(label: "Reset", color: .black) {
+                            print("Reset button pressed.")
                             counterManager.counter = 0
                         }
                         
@@ -106,6 +108,6 @@ struct ContentView: View {
     }
 
 #Preview {
-    ContentView()
+    ContentView().environmentObject(CounterManager())
 }
 
