@@ -13,40 +13,56 @@ struct CustomiseIncrementView: View {
     @State private var tempIncrementValue: String = ""
     
     var body: some View {
-        VStack {
-            Text("Settings")
-                .font(.largeTitle)
-                .padding()
-            
-            // TextField to input the increment value
-            TextField("Increment Value", text: $tempIncrementValue)
-                .keyboardType(.numberPad)
-                .padding()
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-            
-            // Button to save the increment value
-            Button(action: {
-                if let newValue = Int(tempIncrementValue), newValue > 0 {
-                    counterManager.incrementValue = newValue
-                    presentationMode.wrappedValue.dismiss()
-                }
-            }) {
-                Text("Save")
+            VStack {
+                // Title
+                Text("Change increment value")
                     .font(.title)
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+                    .fontWeight(.bold)
+                    .padding(.top, 40)
+                
+                Spacer()
+                
+                // Label and TextField for increment value
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Increment Value")
+                        .font(.headline)
+                    
+                    TextField("Enter increment value", text: $tempIncrementValue)
+                        .keyboardType(.numberPad)  // Ensures only numbers can be input
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(8)
+                }
+                .padding(.horizontal, 20)
+                
+                Spacer()
+                
+                // Save Button
+                Button(action: {
+                    if let newValue = Int(tempIncrementValue), newValue > 0 {
+                        counterManager.incrementValue = newValue
+                        presentationMode.wrappedValue.dismiss()  // Close the customize increment view
+                    }
+                }) {
+                    Text("Save")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding(.horizontal, 20)
+                }
+                
+                Spacer()
             }
-            .padding()
+            .onAppear {
+                // Initialize the text field with the current increment value
+                tempIncrementValue = "\(counterManager.incrementValue)"
+            }
         }
-        .onAppear {
-            // Initialise the text field with the current increment value
-            tempIncrementValue = "\(counterManager.incrementValue)"
-        }
-        .padding()
     }
-}
 
 #Preview {
     CustomiseIncrementView().environmentObject(CounterManager())

@@ -15,6 +15,7 @@
 		181BF8A22C159C8D00450DA9 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BF8A12C159C8D00450DA9 /* HistoryView.swift */; };
 		181BF8A42C15B51200450DA9 /* SettingsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BF8A32C15B51200450DA9 /* SettingsMenuView.swift */; };
 		181BF8A52C15B5E500450DA9 /* CustomiseIncrementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BF89F2C15971300450DA9 /* CustomiseIncrementView.swift */; };
+		181BF8A72C1720F400450DA9 /* CustomBackButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BF8A62C1720F400450DA9 /* CustomBackButtonModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		181BF89F2C15971300450DA9 /* CustomiseIncrementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomiseIncrementView.swift; sourceTree = "<group>"; };
 		181BF8A12C159C8D00450DA9 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		181BF8A32C15B51200450DA9 /* SettingsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenuView.swift; sourceTree = "<group>"; };
+		181BF8A62C1720F400450DA9 /* CustomBackButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButtonModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				181BF88F2C0F335D00450DA9 /* SimpleCounterApp.swift */,
 				181BF8912C0F335D00450DA9 /* ContentView.swift */,
+				181BF8A62C1720F400450DA9 /* CustomBackButtonModifier.swift */,
 				181BF89D2C15921700450DA9 /* CounterManager.swift */,
 				181BF8A12C159C8D00450DA9 /* HistoryView.swift */,
 				181BF8932C0F335E00450DA9 /* Assets.xcassets */,
@@ -154,6 +157,7 @@
 				181BF8A22C159C8D00450DA9 /* HistoryView.swift in Sources */,
 				181BF8A52C15B5E500450DA9 /* CustomiseIncrementView.swift in Sources */,
 				181BF89E2C15921700450DA9 /* CounterManager.swift in Sources */,
+				181BF8A72C1720F400450DA9 /* CustomBackButtonModifier.swift in Sources */,
 				181BF8902C0F335D00450DA9 /* SimpleCounterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

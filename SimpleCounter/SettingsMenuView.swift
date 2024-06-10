@@ -8,25 +8,22 @@
 import SwiftUI
 
 struct SettingsMenuView: View {
+    @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
-        VStack {
-            Text("Settings")
-                .font(.largeTitle)
-                .padding()
-            
-            // Navigation link to customise increment value
-            NavigationLink(destination: CustomiseIncrementView().environmentObject(CounterManager())) {
-                Text("Customize Increment Value")
-                    .font(.title2)
-                    .padding()
-                    .background(Color.gray)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
+        List {
+            Section(header: Text("Counter Settings")) {
+                NavigationLink(destination: CustomiseIncrementView().environmentObject(CounterManager())) {
+                    Text("Change increment value")
+                }
             }
-            .padding()
             
-            // Add more settings options here as needed
+            // Additional sections and settings can be added here
+            
         }
+        .listStyle(GroupedListStyle()) // Use a grouped style for the list
+        .navigationBarTitle("Settings", displayMode: .inline) // Inline title for a traditional settings look
+        .customBackButton()
     }
 }
 
