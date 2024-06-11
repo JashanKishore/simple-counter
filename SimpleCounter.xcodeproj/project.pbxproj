@@ -17,6 +17,7 @@
 		181BF8A52C15B5E500450DA9 /* CustomiseIncrementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BF89F2C15971300450DA9 /* CustomiseIncrementView.swift */; };
 		181BF8A72C1720F400450DA9 /* CustomBackButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BF8A62C1720F400450DA9 /* CustomBackButtonModifier.swift */; };
 		181BF8A92C186BEE00450DA9 /* ConditionalShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BF8A82C186BEE00450DA9 /* ConditionalShadow.swift */; };
+		181BF8AD2C1874A700450DA9 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BF8AC2C1874A700450DA9 /* CustomAlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		181BF8A32C15B51200450DA9 /* SettingsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsMenuView.swift; sourceTree = "<group>"; };
 		181BF8A62C1720F400450DA9 /* CustomBackButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButtonModifier.swift; sourceTree = "<group>"; };
 		181BF8A82C186BEE00450DA9 /* ConditionalShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalShadow.swift; sourceTree = "<group>"; };
+		181BF8AC2C1874A700450DA9 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				181BF89F2C15971300450DA9 /* CustomiseIncrementView.swift */,
 				181BF8A32C15B51200450DA9 /* SettingsMenuView.swift */,
 				181BF8A82C186BEE00450DA9 /* ConditionalShadow.swift */,
+				181BF8AC2C1874A700450DA9 /* CustomAlertView.swift */,
 			);
 			path = SimpleCounter;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181BF8AD2C1874A700450DA9 /* CustomAlertView.swift in Sources */,
 				181BF8A42C15B51200450DA9 /* SettingsMenuView.swift in Sources */,
 				181BF8922C0F335D00450DA9 /* ContentView.swift in Sources */,
 				181BF8A22C159C8D00450DA9 /* HistoryView.swift in Sources */,

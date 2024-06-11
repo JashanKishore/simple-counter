@@ -9,35 +9,37 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var counterManager: CounterManager
-    @Environment(\.colorScheme) var colorScheme 
+    @Environment(\.colorScheme) var colorScheme
+    @State private var showResetAlert = false
     
     var body: some View {
-            NavigationView {
+        NavigationView {
+            ZStack{
                 VStack {
                     // Spacer to push content down
                     Spacer()
                     
                     // Display the current counter value with enhanced styling
                     ZStack {
-                      // Background shape
-                      RoundedRectangle(cornerRadius: 15)
-                          .fill(LinearGradient(
-                              gradient: Gradient(colors: [Color.blue, Color.purple]),
-                              startPoint: .topLeading,
-                              endPoint: .bottomTrailing
-                          ))
-                          .conditionalShadow(colorScheme: colorScheme)
-                      
-                      // Counter label
-                      Text("Counter: \(counterManager.counter)")
-                          .font(.largeTitle)
-                          .fontWeight(.bold)
-                          .foregroundColor(.white)
-                          .padding()
-                          .animation(.easeInOut(duration: 0.2), value: counterManager.counter) // Apply animation to counter changes
-                  }
-                  .frame(width: 300, height: 100) // Adjust the size as needed
-                  .padding(.bottom, 40)
+                        // Background shape
+                        RoundedRectangle(cornerRadius: 15)
+                            .fill(LinearGradient(
+                                gradient: Gradient(colors: [Color.blue, Color.purple]),
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            ))
+                            .conditionalShadow(colorScheme: colorScheme)
+                        
+                        // Counter label
+                        Text("Counter: \(counterManager.counter)")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding()
+                            .animation(.easeInOut(duration: 0.2), value: counterManager.counter) // Apply animation to counter changes
+                    }
+                    .frame(width: 300, height: 100) // Adjust the size as needed
+                    .padding(.bottom, 40)
                     
                     // Spacer to push the counter to the middle of the screen
                     Spacer()
@@ -57,7 +59,9 @@ struct ContentView: View {
                         
                         // Reset button with some padding and background styling
                         counterButton(label: "Reset", color: .black, outlineColor: colorScheme == .dark ? .white : .clear) {
-                            counterManager.counter = 0
+                            withAnimation {
+                                showResetAlert = true
+                            }
                         }
                         
                         // Navigation link to the history view
@@ -85,8 +89,30 @@ struct ContentView: View {
                             .foregroundColor(.blue)
                     }
                 )
+                
+                // Custom alert view
+                if showResetAlert {
+                    Color.black.opacity(0.4).edgesIgnoringSafeArea(.all)
+                    CustomAlertView(
+                        title: "Reset Counter",
+                        message: "Are you sure you want to reset the counter?",
+                        confirmAction: {
+                            withAnimation {
+                                print("Reset button pressed.")
+                                counterManager.counter = 0
+                            }
+                            showResetAlert = false
+                        },
+                        cancelAction: {
+                            showResetAlert = false
+                        }
+                    )
+                    .transition(.scale)
+                }
             }
+            .animation(.easeInOut(duration: 0.2), value: showResetAlert)
         }
+    }
         
         // A helper function to create buttons with consistent styling
         @ViewBuilder
