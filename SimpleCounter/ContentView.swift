@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var counterManager: CounterManager
+    @Environment(\.colorScheme) var colorScheme 
     
     var body: some View {
             NavigationView {
@@ -25,7 +26,7 @@ struct ContentView: View {
                               startPoint: .topLeading,
                               endPoint: .bottomTrailing
                           ))
-                          .shadow(color: .gray, radius: 5, x: 0, y: 5)
+                          .conditionalShadow(colorScheme: colorScheme)
                       
                       // Counter label
                       Text("Counter: \(counterManager.counter)")
@@ -55,7 +56,7 @@ struct ContentView: View {
                         }
                         
                         // Reset button with some padding and background styling
-                        counterButton(label: "Reset", color: .black) {
+                        counterButton(label: "Reset", color: .black, outlineColor: colorScheme == .dark ? .white : .clear) {
                             counterManager.counter = 0
                         }
                         
@@ -69,7 +70,7 @@ struct ContentView: View {
                                 .background(Color.gray)
                                 .foregroundColor(.white)
                                 .cornerRadius(10)
-                                .shadow(color: .gray, radius: 5, x: 0, y: 5)
+                                .conditionalShadow(colorScheme: colorScheme)
                         }
                     }
                     .padding(.bottom, 40) // Adjust padding as needed to place buttons in the bottom third
@@ -89,7 +90,7 @@ struct ContentView: View {
         
         // A helper function to create buttons with consistent styling
         @ViewBuilder
-        private func counterButton(label: String, color: Color, isBold: Bool = false, action: @escaping () -> Void) -> some View {
+        private func counterButton(label: String, color: Color, outlineColor: Color = .clear, isBold: Bool = false, action: @escaping () -> Void) -> some View {
             Button(action: action) {
                 Text(label)
                     .font(.title2)
@@ -99,7 +100,11 @@ struct ContentView: View {
                     .background(color)
                     .foregroundColor(.white)
                     .cornerRadius(10)
-                    .shadow(color: .gray, radius: 5, x: 0, y: 5)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(outlineColor, lineWidth: 2)
+                    )
+                    .conditionalShadow(colorScheme: colorScheme)
             }
         }
     }

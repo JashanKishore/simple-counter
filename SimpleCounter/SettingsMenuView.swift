@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsMenuView: View {
     @EnvironmentObject var counterManager: CounterManager
     @Environment(\.presentationMode) var presentationMode
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
 
     var body: some View {
         List {
@@ -18,8 +19,11 @@ struct SettingsMenuView: View {
                     Text("Change increment value")
                 }
             }
-            
-            // Additional sections and settings can be added here
+            Section(header: Text("Appearance")) { // New section for appearance settings
+                            Toggle(isOn: $isDarkMode) {
+                                Text("Dark Mode")
+                            }
+                        }
             
         }
         .listStyle(GroupedListStyle()) // Use a grouped style for the list
