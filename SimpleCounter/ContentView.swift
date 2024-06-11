@@ -46,19 +46,16 @@ struct ContentView: View {
                         // HStack for Increment and Decrement buttons
                         HStack(spacing: 20) {
                             counterButton(label: "Increment", color: .blue) {
-                                print("Increment button pressed. Current incrementValue: \(counterManager.incrementValue)")
                                 counterManager.counter += counterManager.incrementValue
                             }
                             
                             counterButton(label: "Decrement", color: .red) {
-                                print("Decrement button pressed. Current incrementValue: \(counterManager.incrementValue)")
                                 counterManager.counter -= counterManager.incrementValue
                             }
                         }
                         
                         // Reset button with some padding and background styling
                         counterButton(label: "Reset", color: .black) {
-                            print("Reset button pressed.")
                             counterManager.counter = 0
                         }
                         
