@@ -48,17 +48,17 @@ struct ContentView: View {
                     VStack(spacing: 20) {
                         // HStack for Increment and Decrement buttons
                         HStack(spacing: 20) {
-                            counterButton(label: "Increment", color: .blue) {
+                            counterButton(label: "Increment", baseColor: .clear, animationColors: [Color.blue.opacity(1), Color.blue.opacity(0.4)]) {
                                 counterManager.counter += counterManager.incrementValue
                             }
                             
-                            counterButton(label: "Decrement", color: .red) {
+                            counterButton(label: "Decrement", baseColor: .clear, animationColors: [Color.red.opacity(1), Color.red.opacity(0.4)]) {
                                 counterManager.counter -= counterManager.incrementValue
                             }
                         }
                         
                         // Reset button with some padding and background styling
-                        counterButton(label: "Reset", color: .black, outlineColor: colorScheme == .dark ? .white : .clear) {
+                        counterButton(label: "Reset", baseColor: .black, animationColors: [], outlineColor: colorScheme == .dark ? .white : .clear) {
                             withAnimation {
                                 showResetAlert = true
                             }
@@ -80,6 +80,7 @@ struct ContentView: View {
                     .padding(.bottom, 40) // Adjust padding as needed to place buttons in the bottom third
                 }
                 .padding()
+                .background(Color("PrimaryBackground").edgesIgnoringSafeArea(.all))
                 .navigationBarTitle("Simple Counter", displayMode: .inline)
                 .navigationBarItems(
                     trailing: NavigationLink(destination: SettingsMenuView().environmentObject(counterManager)) {
@@ -113,27 +114,32 @@ struct ContentView: View {
             .animation(.easeInOut(duration: 0.2), value: showResetAlert)
         }
     }
-        
-        // A helper function to create buttons with consistent styling
-        @ViewBuilder
-        private func counterButton(label: String, color: Color, outlineColor: Color = .clear, isBold: Bool = false, action: @escaping () -> Void) -> some View {
-            Button(action: action) {
+    
+    // A helper function to create buttons with consistent styling
+    @ViewBuilder
+    private func counterButton(label: String, baseColor: Color, animationColors: [Color], outlineColor: Color = .clear, isBold: Bool = false, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            ZStack {
+                AnimatedButtonBackground(baseColor: baseColor, animationColors: animationColors)
+                
+                // Text overlay
                 Text(label)
                     .font(.title2)
                     .fontWeight(isBold ? .bold : .regular)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(color)
                     .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(outlineColor, lineWidth: 2)
-                    )
-                    .conditionalShadow(colorScheme: colorScheme)
             }
+            .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(outlineColor, lineWidth: 2)
+            )
+            .conditionalShadow(colorScheme: colorScheme)
+            .frame(height: 60)
         }
     }
+}
 
 #Preview {
     ContentView().environmentObject(CounterManager())

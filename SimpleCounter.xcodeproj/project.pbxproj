@@ -18,6 +18,8 @@
 		181BF8A72C1720F400450DA9 /* CustomBackButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BF8A62C1720F400450DA9 /* CustomBackButtonModifier.swift */; };
 		181BF8A92C186BEE00450DA9 /* ConditionalShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BF8A82C186BEE00450DA9 /* ConditionalShadow.swift */; };
 		181BF8AD2C1874A700450DA9 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BF8AC2C1874A700450DA9 /* CustomAlertView.swift */; };
+		181BF8AF2C19CF6600450DA9 /* AnimatedGradientOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BF8AE2C19CF6600450DA9 /* AnimatedGradientOverlay.swift */; };
+		181BF8B12C19CF8000450DA9 /* AnimatedButtonBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181BF8B02C19CF8000450DA9 /* AnimatedButtonBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		181BF8A62C1720F400450DA9 /* CustomBackButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButtonModifier.swift; sourceTree = "<group>"; };
 		181BF8A82C186BEE00450DA9 /* ConditionalShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalShadow.swift; sourceTree = "<group>"; };
 		181BF8AC2C1874A700450DA9 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
+		181BF8AE2C19CF6600450DA9 /* AnimatedGradientOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedGradientOverlay.swift; sourceTree = "<group>"; };
+		181BF8B02C19CF8000450DA9 /* AnimatedButtonBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButtonBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 			children = (
 				181BF88F2C0F335D00450DA9 /* SimpleCounterApp.swift */,
 				181BF8912C0F335D00450DA9 /* ContentView.swift */,
+				181BF8AE2C19CF6600450DA9 /* AnimatedGradientOverlay.swift */,
+				181BF8B02C19CF8000450DA9 /* AnimatedButtonBackground.swift */,
 				181BF8A62C1720F400450DA9 /* CustomBackButtonModifier.swift */,
 				181BF89D2C15921700450DA9 /* CounterManager.swift */,
 				181BF8A12C159C8D00450DA9 /* HistoryView.swift */,
@@ -163,7 +169,9 @@
 				181BF8922C0F335D00450DA9 /* ContentView.swift in Sources */,
 				181BF8A22C159C8D00450DA9 /* HistoryView.swift in Sources */,
 				181BF8A52C15B5E500450DA9 /* CustomiseIncrementView.swift in Sources */,
+				181BF8AF2C19CF6600450DA9 /* AnimatedGradientOverlay.swift in Sources */,
 				181BF8A92C186BEE00450DA9 /* ConditionalShadow.swift in Sources */,
+				181BF8B12C19CF8000450DA9 /* AnimatedButtonBackground.swift in Sources */,
 				181BF89E2C15921700450DA9 /* CounterManager.swift in Sources */,
 				181BF8A72C1720F400450DA9 /* CustomBackButtonModifier.swift in Sources */,
 				181BF8902C0F335D00450DA9 /* SimpleCounterApp.swift in Sources */,
