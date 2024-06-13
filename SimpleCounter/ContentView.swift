@@ -67,7 +67,7 @@ struct ContentView: View {
                         }
                         
                         // Reset button with some padding and background styling
-                        counterButton(label: "Reset", baseColor: .black, animationColors: [], outlineColor: colorScheme == .dark ? .white : .clear) {
+                        counterButton(label: "Reset", baseColor: .black, animationColors: [], outlineColor: colorScheme == .dark ? .white.opacity(0.5) : .clear) {
                             withAnimation {
                                 showResetAlert = true
                             }
@@ -84,7 +84,7 @@ struct ContentView: View {
                 }
                 .padding()
                 .background(Color("PrimaryBackground").edgesIgnoringSafeArea(.all))
-                .navigationBarTitle("Simple Counter", displayMode: .inline)
+                //.navigationBarTitle("Simple Counter", displayMode: .inline)
                 .navigationBarItems(
                     trailing: NavigationLink(destination: SettingsMenuView().environmentObject(counterManager)) {
                         // Use an SF Symbol for the settings icon
