@@ -31,15 +31,23 @@ struct ContentView: View {
                             ))
                             .conditionalShadow(colorScheme: colorScheme)
                         
-                        // Counter label
-                        Text("Counter: \(counterManager.counter)")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .padding()
-                            .animation(.easeInOut(duration: 0.2), value: counterManager.counter) // Apply animation to counter changes
+                        VStack {
+                            Text("Counter")
+                                .font(.title)
+                                .fontWeight(.medium)
+                                .foregroundColor(.white)
+                                .padding(.top)
+                            
+                            Text("\(counterManager.counter)")
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding(.bottom)
+                        }
+                        .padding()
+                        .animation(.easeInOut(duration: 0.2), value: counterManager.counter)
                     }
-                    .frame(width: 300, height: 100) // Adjust the size as needed
+                    .frame(width: 300, height: 150)
                     .padding(.bottom, 40)
                     
                     // Spacer to push the counter to the middle of the screen
@@ -66,7 +74,7 @@ struct ContentView: View {
                         }
                         
                         // History Log Button
-                        counterButton(label: "History Log", baseColor: .gray, animationColors: []) {
+                        counterButton(label: "History Log", baseColor: .gray.opacity(0.4), animationColors: []) {
                             withAnimation {
                                 navigateToHistory = true
                             }
