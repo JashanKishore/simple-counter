@@ -11,9 +11,10 @@ struct ContentView: View {
     @EnvironmentObject var counterManager: CounterManager
     @Environment(\.colorScheme) var colorScheme
     @State private var showResetAlert = false
+    @State private var navigateToHistory = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack{
                 VStack {
                     // Spacer to push content down
@@ -64,17 +65,11 @@ struct ContentView: View {
                             }
                         }
                         
-                        // Navigation link to the history view
-                        NavigationLink(destination: HistoryView().environmentObject(counterManager)) {
-                            Text("History Log")
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .background(Color.gray)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                                .conditionalShadow(colorScheme: colorScheme)
+                        // History Log Button
+                        counterButton(label: "History Log", baseColor: .gray, animationColors: []) {
+                            withAnimation {
+                                navigateToHistory = true
+                            }
                         }
                     }
                     .padding(.bottom, 40) // Adjust padding as needed to place buttons in the bottom third
@@ -112,6 +107,9 @@ struct ContentView: View {
                 }
             }
             .animation(.easeInOut(duration: 0.2), value: showResetAlert)
+            .navigationDestination(isPresented: $navigateToHistory) {
+                HistoryView().environmentObject(counterManager)
+            }
         }
     }
     

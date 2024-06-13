@@ -24,7 +24,8 @@ struct CustomAlertView: View {
                 .padding([.top, .horizontal])
                 .multilineTextAlignment(.center)
             
-            Divider()
+            //Divider()
+            .padding(.bottom)
             
             HStack {
                 Button(action: cancelAction) {
