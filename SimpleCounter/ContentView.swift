@@ -48,11 +48,11 @@ struct ContentView: View {
                     VStack(spacing: 20) {
                         // HStack for Increment and Decrement buttons
                         HStack(spacing: 20) {
-                            counterButton(label: "Increment", baseColor: .clear, animationColors: [Color.blue.opacity(1), Color.blue.opacity(0.4)]) {
+                            counterButton(label: "Increment", baseColor: .blue.opacity(0.2), animationColors: [Color.blue.opacity(1), Color.blue.opacity(0.1)], outlineColor: .blue.opacity(0.5)) {
                                 counterManager.counter += counterManager.incrementValue
                             }
                             
-                            counterButton(label: "Decrement", baseColor: .clear, animationColors: [Color.red.opacity(1), Color.red.opacity(0.4)]) {
+                            counterButton(label: "Decrement", baseColor: .red.opacity(0.2), animationColors: [Color.red.opacity(1), Color.red.opacity(0.1)], outlineColor: .red.opacity(0.5)) {
                                 counterManager.counter -= counterManager.incrementValue
                             }
                         }

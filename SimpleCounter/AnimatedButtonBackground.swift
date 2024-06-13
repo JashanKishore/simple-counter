@@ -13,9 +13,10 @@ struct AnimatedButtonBackground: View {
     
     var body: some View {
         ZStack {
-            baseColor
+            baseColor.opacity(0.7)
             AnimatedGradientOverlay(colors: animationColors)
                 .blendMode(.overlay)
+                .opacity(0.6)
                 
         }
         .clipShape(RoundedRectangle(cornerRadius: 10))
