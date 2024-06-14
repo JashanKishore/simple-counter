@@ -1,6 +1,6 @@
 # 🧮 SimpleCounter
 
-A SwiftUI-based simple counter app with a customizable increment value, history log, dark mode support, and more. This project is designed to help understand the basics of SwiftUI, state management, and data persistence using `UserDefaults`.
+A SwiftUI-based simple counter app with a customisable increment value, history log, dark mode support, and more. This project is designed to help understand the basics of SwiftUI, state management, and data persistence using `UserDefaults`.
 
 ## 📦 Technologies
 
@@ -13,14 +13,14 @@ A SwiftUI-based simple counter app with a customizable increment value, history 
 Here's what you can do with SimpleCounter:
 
 ### Increment and Decrement
-- **Increment**: Increase the counter by a customizable value.
-- **Decrement**: Decrease the counter by a customizable value.
+- **Increment**: Increase the counter by a customisable value.
+- **Decrement**: Decrease the counter by a customisable value.
 
 ### Reset Counter
 - **Reset**: Set the counter back to zero with a confirmation alert.
 
 ### Custom Increment Value
-- **Customize Increment**: Set a custom increment value in the settings menu.
+- **Customise Increment**: Set a custom increment value in the settings menu.
 
 ### History Log
 - **History Log**: View a log of all counter changes, including increments, decrements, and resets, with timestamps.
@@ -65,7 +65,7 @@ Added confirmation alerts for reset and clear history actions to prevent acciden
 - **UserDefaults**: Gained experience in persisting data locally using `UserDefaults`.
 
 ### SwiftUI Components
-- **List and Navigation**: Improved skills in using `List`, `NavigationView`, and `NavigationLink` for building SwiftUI interfaces.
+- **List and Navigation**: Improved skills in using `List`, `NavigationView`, `NavigationStack` and `NavigationLink` for building SwiftUI interfaces.
 
 ### Animations
 - **SwiftUI Animations**: Implemented smooth animations for various state changes in the app.
@@ -77,7 +77,7 @@ Added confirmation alerts for reset and clear history actions to prevent acciden
 - **Confirmation Alerts**: Implemented custom alert views for reset and clear history actions, enhancing user experience.
 
 ## 💭 How can it be improved?
-- Add more customizable settings such as different themes.
+- Add more customisable settings such as different themes.
 - Enhance the history log with more detailed actions.
 - Implement additional counter-related functionalities.
 - Improve accessibility for a wider range of users.
