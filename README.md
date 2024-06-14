@@ -29,13 +29,6 @@ Here's what you can do with SimpleCounter:
 ### Dark Mode
 - **Dark Mode Support**: The app adapts to the system's dark mode settings, providing a seamless user experience.
 
-## 🎯 Keyboard Shortcuts
-- **Increment**: Tap the "Increment" button.
-- **Decrement**: Tap the "Decrement" button.
-- **Reset**: Tap the "Reset" button and confirm the action.
-- **History Log**: Tap the "History Log" button to view the history.
-- **Settings**: Tap the settings icon to customize the increment value.
-
 ## 👩🏽‍🍳 The Process
 
 ### Initial Setup
