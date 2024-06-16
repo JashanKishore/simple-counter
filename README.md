@@ -81,7 +81,7 @@ To run the project in your local environment, follow these steps:
 
 1. **Clone the repository to your local machine**:
    ```sh
-   git clone https://github.com/your-username/SimpleCounter.git
+   git clone https://github.com/JashanKishore/simple-counter
    ```
 2. **Open the project in Xcode**:
    - Navigate to the project directory and open the `.xcodeproj` file with Xcode.
