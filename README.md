@@ -95,11 +95,11 @@ To run the project in your local environment, follow these steps:
 | Main Function | History Log |
 | --- | --- |
 | ![Main Function](https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/mainfunction.gif) | ![History Log](https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/historylog.gif) |
-| **Main Function** | **History Log** |
+
 
 | Dark Mode | Change Value |
 | --- | --- |
 | ![Dark Mode](https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/darkmode.gif) | ![Change Value](https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/changevalue.gif) |
-| **Dark Mode** | **Change Value** |
+
 
 
