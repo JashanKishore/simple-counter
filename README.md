@@ -92,29 +92,27 @@ To run the project in your local environment, follow these steps:
 
 ## 🎥 App Demonstration
 
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+<div style="display: flex; justify-content: space-between; gap: 10px;">
 
-  <div style="text-align: center;">
+  <div style="text-align: center; flex: 1;">
     <h3>Main Function</h3>
-    <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/mainfunction.gif" width="100%" alt="Main Function">
+    <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/mainfunction.gif" width="100%" height="200px" alt="Main Function">
   </div>
 
-  <div style="text-align: center;">
+  <div style="text-align: center; flex: 1;">
     <h3>History Log</h3>
-    <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/historylog.gif" width="100%" alt="History Log">
+    <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/historylog.gif" width="100%" height="200px" alt="History Log">
   </div>
 
-  <div style="text-align: center;">
+  <div style="text-align: center; flex: 1;">
     <h3>Dark Mode</h3>
-    <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/darkmode.gif" width="100%" alt="Dark Mode">
+    <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/darkmode.gif" width="100%" height="200px" alt="Dark Mode">
   </div>
 
-  <div style="text-align: center;">
+  <div style="text-align: center; flex: 1;">
     <h3>Change Value</h3>
-    <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/changevalue.gif" width="100%" alt="Change Value">
+    <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/changevalue.gif" width="100%" height="200px" alt="Change Value">
   </div>
 
 </div>
 
-
-</div>
