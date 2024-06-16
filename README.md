@@ -89,3 +89,11 @@ To run the project in your local environment, follow these steps:
    - Make sure you have Xcode installed with the necessary SwiftUI components.
 4. **Run the app**:
    - Select your target device (simulator or physical device) and run the app using the play button in Xcode.
+
+## 🎥 App Demonstration
+<div style="display: flex; justify-content: space-around;">
+  <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/mainfunction.gif" width="45%" alt="Demo 1">
+  <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/historylog.gif" width="45%" alt="Demo 2">
+   <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/darkmode.gif" width="45%" alt="Demo 3">
+   <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/changevalue.gif" width="45%" alt="Demo 4">
+</div>
