@@ -43,8 +43,8 @@ Used `UserDefaults` to save the increment value and counter value, ensuring data
 ### History Log
 Added a history log feature to track counter changes, displayed in a `List`. Used `@Published` properties to manage the history log state.
 
-### Customization and Dark Mode
-Implemented settings to allow users to customize the increment value and added dark mode support to provide a better user experience.
+### Customisation and Dark Mode
+Implemented settings to allow users to customise the increment value and added dark mode support to provide a better user experience.
 
 ### Alerts and Confirmations
 Added confirmation alerts for reset and clear history actions to prevent accidental data loss.
