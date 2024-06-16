@@ -91,9 +91,27 @@ To run the project in your local environment, follow these steps:
    - Select your target device (simulator or physical device) and run the app using the play button in Xcode.
 
 ## 🎥 App Demonstration
-<div style="display: flex; justify-content: space-around;">
-  <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/mainfunction.gif" width="45%" alt="Demo 1">
-  <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/historylog.gif" width="45%" alt="Demo 2">
-   <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/darkmode.gif" width="45%" alt="Demo 3">
-   <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/changevalue.gif" width="45%" alt="Demo 4">
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+
+  <div style="flex: 1 1 22%; text-align: center; margin: 10px;">
+    <h3>Main Function</h3>
+    <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/mainfunction.gif" width="100%" alt="Main Function">
+  </div>
+
+  <div style="flex: 1 1 22%; text-align: center; margin: 10px;">
+    <h3>History Log</h3>
+    <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/historylog.gif" width="100%" alt="History Log">
+  </div>
+
+  <div style="flex: 1 1 22%; text-align: center; margin: 10px;">
+    <h3>Dark Mode</h3>
+    <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/darkmode.gif" width="100%" alt="Dark Mode">
+  </div>
+
+  <div style="flex: 1 1 22%; text-align: center; margin: 10px;">
+    <h3>Change Value</h3>
+    <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/changevalue.gif" width="100%" alt="Change Value">
+  </div>
+
 </div>
