@@ -92,28 +92,14 @@ To run the project in your local environment, follow these steps:
 
 ## 🎥 App Demonstration
 
-<div style="display: flex; justify-content: space-around; gap: 10px; flex-wrap: wrap;">
+| Main Function | History Log |
+| --- | --- |
+| ![Main Function](https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/mainfunction.gif) | ![History Log](https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/historylog.gif) |
+| **Main Function** | **History Log** |
 
-  <div style="text-align: center; flex: 1 1 45%;">
-    <h3>Main Function</h3>
-    <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/mainfunction.gif" style="width: 100%; height: auto;" alt="Main Function">
-  </div>
-
-  <div style="text-align: center; flex: 1 1 45%;">
-    <h3>History Log</h3>
-    <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/historylog.gif" style="width: 100%; height: auto;" alt="History Log">
-  </div>
-
-  <div style="text-align: center; flex: 1 1 45%;">
-    <h3>Dark Mode</h3>
-    <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/darkmode.gif" style="width: 100%; height: auto;" alt="Dark Mode">
-  </div>
-
-  <div style="text-align: center; flex: 1 1 45%;">
-    <h3>Change Value</h3>
-    <img src="https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/changevalue.gif" style="width: 100%; height: auto;" alt="Change Value">
-  </div>
-
-</div>
+| Dark Mode | Change Value |
+| --- | --- |
+| ![Dark Mode](https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/darkmode.gif) | ![Change Value](https://raw.githubusercontent.com/JashanKishore/simple-counter/2b8a67d872bfd59e92e8ecc2f7c251aaec6f9b9e/changevalue.gif) |
+| **Dark Mode** | **Change Value** |
 
 
